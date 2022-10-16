@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 			i++;
 		}
 	}
-	printf("\n");
+	_putchar('\n');
 	va_end(list);
 	return (len);
 }
@@ -57,7 +57,7 @@ void sw(const char *format, unsigned int i,
 			_putchar(va_arg(list, int));
 			break;
 		case '%':
-			putchar('%');
+			_putchar('%');
 			break;
 
 	}
