@@ -8,20 +8,62 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i;
+	unsigned int i, len;
+	va_list list;
 
-	i = 0;
-	while (*(format + i) == '\0')
+	va_start(list, format);
+	if (format != NULL)
 	{
-		if (*(format + i) == '%')
+		len = strlen(format);
+		i = 0;
+		while (i < len)
 		{
-			printf("yes");
+			sw(format, i, len, list);
+			i++;
 		}
-		else
-		{
-			printf("no");
-		}
-		i++;
 	}
+	printf("\n");
+	va_end(list);
 	return (0);
+}
+
+/**
+  * switch - Function for a switch statement.
+  * @format: 1st operand.
+  * @i: 2nd operand.
+  * @len: 3rd operand.
+  * @list: 4th operand.
+  * Return: void.
+  */
+
+void sw(const char *format, unsigned int i,
+		unsigned int len, va_list list)
+{
+	char *string;
+	unsigned int x;
+
+	switch (*(format + i))
+	{
+		case 's':
+			string = va_arg(list, char *);
+			x = 0;
+			while (*(string + x) != '\0')
+			{
+				putchar(*(string + x));
+				x++;
+			}
+			break;
+		case 'c':
+			putchar(va_arg(list, int));
+			break;
+		case '%':
+			putchar('%');
+			break;
+
+	}
+	if ((i + 1) != len)
+	{
+		putchar(',');
+		putchar(' ');
+	}
 }
