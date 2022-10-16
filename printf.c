@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	}
 	printf("\n");
 	va_end(list);
-	return (0);
+	return (len);
 }
 
 /**
@@ -49,12 +49,12 @@ void sw(const char *format, unsigned int i,
 			x = 0;
 			while (*(string + x) != '\0')
 			{
-				putchar(*(string + x));
+				_putchar(*(string + x));
 				x++;
 			}
 			break;
 		case 'c':
-			putchar(va_arg(list, int));
+			_putchar(va_arg(list, int));
 			break;
 		case '%':
 			putchar('%');
@@ -63,7 +63,7 @@ void sw(const char *format, unsigned int i,
 	}
 	if ((i + 1) != len)
 	{
-		putchar(',');
-		putchar(' ');
+		_putchar(',');
+		_putchar(' ');
 	}
 }
