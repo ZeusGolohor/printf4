@@ -9,9 +9,6 @@
  */
 int main(void)
 {
-	unsigned int len;
-
-	len = _printf("sc%", "test", 't');
-	printf("%d\n", len);
+	_printf("cts", 't');
 	return (0);
 }
