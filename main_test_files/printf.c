@@ -8,7 +8,7 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i, x, len;
+	unsigned int i, x, y, len;
 	int tot_len;
 	char *str;
 	va_list list;
@@ -22,7 +22,12 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	if (format != NULL)
 	{
-		len = strlen(format);
+		y = 0;
+		while (*(format + y) != '\0')
+		{
+			y++;
+		}
+		len = y;
 		str = malloc(sizeof(char) * (len + 1));
 		str = strcpy(str, format);
 		i = 0;
