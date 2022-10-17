@@ -8,8 +8,8 @@
 
 int print_char(va_list list)
 {
-	_putchar(va_arg(list, int));
-	_putchar('\n');
+	_write_char(va_arg(list, int));
+	_write_char('\n');
 	return (1);
 }
 
@@ -28,10 +28,10 @@ int print_string(va_list list)
 	i = 0;
 	while (*(s + i) != '\0')
 	{
-		_putchar(*(s + i));
+		_write_char(*(s + i));
 		i++;
 	}
-	_putchar('\n');
+	_write_char('\n');
 	return ((i - 1));
 }
 
@@ -43,7 +43,7 @@ int print_string(va_list list)
 
 int print_perc(va_list list)
 {
-	_putchar(va_arg(list, int));
-	_putchar('\n');
+	_write_char(va_arg(list, int));
+	_write_char('\n');
 	return (1);
 }
