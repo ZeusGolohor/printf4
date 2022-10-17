@@ -15,7 +15,7 @@ typedef struct snf
 char *symbol;
 int (*function)(va_list);
 } s_f;
-int _putchar(char c);
+int _write_char(char c);
 int print_char(va_list list);
 int print_string(va_list list);
 int print_perc(va_list list);
