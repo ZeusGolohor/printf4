@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 		}
 		len = y;
 		str = malloc(sizeof(char) * (len + 1));
-		str = strcpy(str, format);
+		str = _strcpy(str, format);
 		i = 0;
 		while (i < len)
 		{
