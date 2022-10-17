@@ -1,8 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdlib.h>
 #include <stdarg.h>
-#include <string.h>
+#include <stdlib.h>
+
 
 int _printf(const char *format, ...);
 /**
@@ -19,4 +19,5 @@ int _write_char(char c);
 int print_char(va_list list);
 int print_string(va_list list);
 int print_perc(va_list list);
+char *_strcpy(char *dest, const char *src);
 #endif
