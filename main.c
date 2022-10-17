@@ -9,6 +9,13 @@
  */
 int main(void)
 {
-	_printf("cts", 't');
+	int len;
+
+	len = _printf("c\n", 't');
+	printf("%d\n", len);
+	len = _printf("s", "string");
+	printf("%d\n", len);
+	len = _printf("%", '%');
+	printf("%d\n", len);
 	return (0);
 }

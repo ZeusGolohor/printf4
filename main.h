@@ -12,10 +12,11 @@ int _printf(const char *format, ...);
   */
 typedef struct snf
 {
-const char *symbol;
+char *symbol;
 int (*function)(va_list);
 } s_f;
-int (*get_snf_func(const char *s))(va_list);
 int _putchar(char c);
 int print_char(va_list list);
+int print_string(va_list list);
+int print_perc(va_list list);
 #endif
